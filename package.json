@@ -7,9 +7,9 @@
     "lint": "eslint --fix ./src",
     "watch": "webpack-dev-server --progress",
     "dev": "concurrently \"npm run build:dev\" \"npm run watch\"",
-    "start": "npm run build:prod && node server.js",
+    "start": "npm run build && node server.js",
     "build:dev": "npx webpack --config webpack.config.js --mode=development",
-    "build:prod": "npx webpack --config webpack.config.js --mode=production"
+    "build": "npx webpack --config webpack.config.js --mode=production"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,7 @@
     "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   }
 }

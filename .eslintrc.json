@@ -12,6 +12,10 @@
     "no-console":"warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/extensions": [0],
-    "react/jsx-indent": [0]
+    "react/jsx-indent": [0],
+    "react/jsx-fragments": [0],
+    "linebreak-style": 0,
+    "global-require": 0,
+    "eslint linebreak-style": [0, "error", "windows"]
   }
 }
