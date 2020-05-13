@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/champs-frontend
+    docker:
+      - image: circleci/node:12.16.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-v1-champs-frontend-{{ checksum "package.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm i
+      - save_cache:
+          key: npm-cache-v1-champs-frontend-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run:
+          name: Run Tests
+          command: npm run test
+      
+      - run:
+          name: Install packages
+          command: npm install
+
+      - run:
+          name: Build app
+          command: npm run build
