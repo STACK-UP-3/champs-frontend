@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/STACK-UP-3/champs-frontend)
+
+[![Coverage Status](https://coveralls.io/repos/github/STACK-UP-3/champs-frontend/badge.svg?branch=development)](https://coveralls.io/github/STACK-UP-3/champs-frontend?branch=development)
+
 # champs-frontend
 
 ## Barefoot Nomad:

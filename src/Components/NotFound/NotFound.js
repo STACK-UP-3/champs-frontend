@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const NotFound = () => (
-	<div>
+	<Fragment>
 		<h1>The page does not exist</h1>
-	</div>
+	</Fragment>
 );
 
 export default NotFound;

@@ -1,29 +1,30 @@
-version: 2
+version: 2.1 
+
+orbs: 
+  coveralls: coveralls/coveralls@1.0.4 
+
+
 jobs:
   build:
-    working_directory: ~/champs-frontend
     docker:
-      - image: circleci/node:12.16.0
+      - image: circleci/node:10.16.0
+      
+    working_directory: ~/champs-frontend
+    
     steps:
       - checkout
       - restore_cache:
-          key: npm-cache-v1-champs-frontend-{{ checksum "package.json" }}
-      - run:
-          name: Install Dependencies
-          command: npm i
-      - save_cache:
-          key: npm-cache-v1-champs-frontend-{{ checksum "package.json" }}
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run:
-          name: Run Tests
-          command: npm run test
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+            
+      - run: npm install
       
-      - run:
-          name: Install packages
-          command: npm install
-
-      - run:
-          name: Build app
-          command: npm run build
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+          
+      - run: npm run test
+      
+      - coveralls/upload  
