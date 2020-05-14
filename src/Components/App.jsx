@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+} from 'react-router-dom';
 
 import './App.scss';
-import Home from './Shared/Home/Home.jsx';
+import NavBar from './Shared/NavBar/NavBar.jsx';
+import Home from './Home/Home.jsx';
+import SignIn from './SignIn/SignIn.jsx';
 
-export default class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+const App = () => (
+	<Router>
+		<div>
+			<NavBar />
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/signin" component={SignIn} />
+			</Switch>
+		</div>
+	</Router>
+);
 
-	render() {
-		return (
-			<div>
-				<header className="header">
-					<h1>Barefoot Nomad</h1>
-				</header>
-				<Home />
-			</div>
-		);
-	}
-}
+export default App;
