@@ -8,8 +8,8 @@
   },
   "extends": ["eslint:recommended","airbnb"],
   "rules": {
-    "indent": [2, "tab"],
-    "quotes": [2, "single"],
+    "indent": ["warn", 2],
+    "quotes": ["warn", "single"],
     "no-tabs": "off",
     "no-console":"warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
