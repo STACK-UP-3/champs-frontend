@@ -12,6 +12,10 @@ module.exports = {
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$",
     "^.+\\.module\\.(css|sass|scss)$"
   ],
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest",
+    "^.+\\.svg$": "<rootDir>/__tests__/__mocks__/svgMock.js"
+  },
   moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "<rootDir>/__tests__/__mocks__/styleMock.js"
   },

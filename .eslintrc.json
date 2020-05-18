@@ -17,6 +17,6 @@
     "global-require": 0,
     "eslint linebreak-style": [0, "error", "windows"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
-    "jsx-a11y/anchor-is-valid": [0]
+    "react/jsx-props-no-spreading": 0
   }
 }

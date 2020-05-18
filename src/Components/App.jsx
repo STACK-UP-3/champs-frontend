@@ -1,24 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import store from "../Redux/store";
-
 import "./App.scss";
-import NavBar from "./Shared/NavBar/NavBar.jsx";
+
 import Home from "./Home/Home.jsx";
-import SignIn from "./SignIn/SignIn.jsx";
+import SignInComponent from "./Auth/SignIn/SignIn.jsx";
+import Protected from "./Shared/ProtectedRoute/ProtectedRoute.jsx";
+
+toast.configure();
 
 const App = () => (
   <Provider store={store}>
-    <Router>
-      <div>
-        <NavBar />
+    <div>
+      <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/signin" component={SignIn} />
+          <Protected path="/home" component={Home} />
+          <Route path="/" component={SignInComponent} />
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   </Provider>
 );
 
