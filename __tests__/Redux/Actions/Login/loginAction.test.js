@@ -1,6 +1,6 @@
 import moxios from "moxios";
 import testStore from "../../../../src/Redux/store";
-import { login } from "../../../../src/Redux/Actions/login/loginAction";
+import { login } from "../../../../src/Redux/Actions/Login/loginAction";
 
 describe("login action", () => {
   beforeEach(() => {

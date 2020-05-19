@@ -2,29 +2,19 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import {
-  SignIn,
+  SignUp,
   mapDispatchToProps,
   mapStateToProps
-} from "../../../../src/Components/Auth/SignIn/SignIn";
+} from "../../../../src/Components/Auth/SignUp/SignUp";
 
 const setup = props => {
-  const { loginAction, historyMock, isAuthenticated, location } = props;
-  let history;
-  if (historyMock) {
-    history = historyMock;
-  } else {
-    history = {
-      push: jest.fn(),
-      replace: jest.fn()
-    };
-  }
-
+  const { signUpAction, history, status, loading } = props;
   const wrapper = shallow(
-    <SignIn
-      loginAction={loginAction}
+    <SignUp
+      signUpAction={signUpAction}
       history={history}
-      isAuthenticated={isAuthenticated}
-      location={location}
+      status={status}
+      loading={loading}
     />
   );
   return wrapper;
@@ -46,18 +36,13 @@ const simulateChangeOnInput = (
   return component.find(inputSelector);
 };
 
-describe("Sign in test suite", () => {
+describe("Sign up test suite", () => {
   describe("Have props", () => {
     let wrapper;
     beforeEach(() => {
-      const loginMock = jest.fn();
+      const signUpMock = jest.fn();
       const props = {
-        loginAction: loginMock,
-        location: {
-          state: {
-            from: { pathname: "/home" }
-          }
-        }
+        signUpAction: signUpMock
       };
       wrapper = setup(props);
     });
@@ -70,42 +55,104 @@ describe("Sign in test suite", () => {
     it("Should have a inputbox and buttons tags", () => {
       const component = wrapper;
       expect(component.find("input").exists()).toBe(true);
+      expect(component.find("#auth-firstname").exists()).toBe(true);
+      expect(component.find("#auth-lastname").exists()).toBe(true);
+      expect(component.find("#auth-username").exists()).toBe(true);
       expect(component.find("#auth-email").exists()).toBe(true);
       expect(component.find("#auth-password").exists()).toBe(true);
     });
 
     it("should simulate a change on inputBoxes", () => {
       const component = wrapper;
+
+      const updatedFirstname = simulateChangeOnInput(
+        component,
+        "#auth-firstname",
+        "firstname",
+        "Aggy"
+      );
+      expect(updatedFirstname.props().value).toBe("Aggy");
+
+      const updatedLastname = simulateChangeOnInput(
+        component,
+        "#auth-lastname",
+        "lasstname",
+        ""
+      );
+      expect(updatedLastname.props().value).toBe("");
+
+      const updatedUsername = simulateChangeOnInput(
+        component,
+        "#auth-username",
+        "username",
+        "Ann"
+      );
+      expect(updatedUsername.props().value).toBe("Ann");
+
       const updatedEmail = simulateChangeOnInput(
         component,
         "#auth-email",
         "email",
-        "kalisa@gmail.com"
+        "aggy@gmail.com"
       );
-      expect(updatedEmail.props().value).toBe("kalisa@gmail.com");
+      expect(updatedEmail.props().value).toBe("aggy@gmail.com");
+
       const updatedPassword = simulateChangeOnInput(
         component,
         "#auth-password",
         "password",
-        "QWE1234"
+        "ann12345"
       );
-      expect(updatedPassword.props().value).toBe("QWE1234");
+      expect(updatedPassword.props().value).toBe("ann12345");
     });
 
     it("should test the state of the app after onChange event", () => {
       const component = wrapper;
       const componentInstance = component.instance();
+
+      const updatedFirstname = simulateChangeOnInput(
+        component,
+        "#auth-firstname",
+        "firstname",
+        "Aggy"
+      );
+
+      const updatedLastname = simulateChangeOnInput(
+        component,
+        "#auth-lastname",
+        "lasstname",
+        "Ann"
+      );
+
+      const updatedUsername = simulateChangeOnInput(
+        component,
+        "#auth-username",
+        "username",
+        "Ann"
+      );
+
       const updatedEmail = simulateChangeOnInput(
         component,
         "#auth-email",
         "email",
         "kalisa@gmail.com"
       );
+
       const updatedPassword = simulateChangeOnInput(
         component,
         "#auth-password",
         "password",
         "QWE1234"
+      );
+
+      expect(componentInstance.state.firstname).toEqual(
+        updatedFirstname.props().value
+      );
+      expect(componentInstance.state.lastname).toEqual(
+        updatedLastname.props().value
+      );
+      expect(componentInstance.state.username).toEqual(
+        updatedUsername.props().value
       );
       expect(componentInstance.state.email).toEqual(updatedEmail.props().value);
       expect(componentInstance.state.password).toEqual(
@@ -114,13 +161,17 @@ describe("Sign in test suite", () => {
     });
 
     it("should simulate submit event", () => {
-      const loginMock = jest.fn();
+      const signUpMock = jest.fn();
       const props = {
-        loginAction: loginMock,
+        signUpAction: signUpMock,
         loading: true
       };
       const component = setup(props);
 
+      simulateChangeOnInput(component, "#auth-firstname", "firstname", "Aggy");
+      simulateChangeOnInput(component, "#auth-lastname", "lastname", "Ann");
+      simulateChangeOnInput(component, "#auth-username", "username", "Ann");
+
       simulateChangeOnInput(
         component,
         "#auth-email",
@@ -128,61 +179,74 @@ describe("Sign in test suite", () => {
         "kalisa@gmail.com"
       );
 
-      simulateChangeOnInput(component, "#auth-password", "password", "QWE1234");
+      simulateChangeOnInput(
+        component,
+        "#auth-password",
+        "password",
+        "ann12345"
+      );
       const form = component.find("form");
       form.simulate("submit", {
         preventDefault: () => {}
       });
-      expect(loginMock).toHaveBeenCalledTimes(1);
+      expect(signUpMock).toHaveBeenCalledTimes(1);
     });
 
     it("should redirect to Home component", () => {
-      const historyMock = {
-        push: jest.fn(),
-        replace: jest.fn()
+      const history = {
+        push: jest.fn()
       };
       jest.useFakeTimers();
       const props = {
-        isAuthenticated: false,
-        loginAction: jest.fn(),
-        historyMock
+        status: 400,
+        signUpAction: jest.fn(),
+        history
       };
 
       const component = setup(props);
 
+      simulateChangeOnInput(component, "#auth-firstname", "firstname", "Aggy");
+      simulateChangeOnInput(component, "#auth-lastname", "lastname", "Ann");
+      simulateChangeOnInput(component, "#auth-username", "username", "Ann");
+
       simulateChangeOnInput(
         component,
         "#auth-email",
         "email",
-        "kalisa@gmail.com"
+        "aggy@gmail.com"
       );
 
-      simulateChangeOnInput(component, "#auth-password", "password", "QWE1234");
+      simulateChangeOnInput(
+        component,
+        "#auth-password",
+        "password",
+        "ann12345"
+      );
       const form = component.find("form");
       form.simulate("submit", {
         preventDefault: () => {}
       });
-      expect(component.instance().props.isAuthenticated).toBe(false);
-      expect(component.instance().props.history).toBe(historyMock);
-      component.setProps({ isAuthenticated: true });
+      expect(component.instance().props.status).toBe(400);
+      expect(component.instance().props.history).toBe(history);
+      component.setProps({ status: 201 });
       jest.advanceTimersByTime(500);
-      expect(historyMock.push).toHaveBeenCalledTimes(1);
+      expect(history.push).toHaveBeenCalledTimes(1);
     });
 
     it("should test the mapDispatchToProps", () => {
       const dispatch = jest.fn();
-      mapDispatchToProps(dispatch).loginAction();
+      mapDispatchToProps(dispatch).signUpAction();
       expect(dispatch.mock.calls[0][0]).toBeInstanceOf(Function);
     });
 
     test("mapStateToProps Should return an object", () => {
       const expectedObject = {
-        isAuthenticated: false,
+        status: 400,
         loading: false
       };
       const stateObject = {
-        login: {
-          isAuthenticated: false,
+        signUp: {
+          status: 400,
           loading: false
         }
       };

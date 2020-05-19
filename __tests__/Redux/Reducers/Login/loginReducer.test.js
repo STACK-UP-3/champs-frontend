@@ -1,9 +1,9 @@
-import loginReducer from "../../../../src/Redux/Reducers/login/loginReducer";
+import loginReducer from "../../../../src/Redux/Reducers/Login/loginReducer";
 import {
   loginRequest,
   loginSuccess,
   loginFail
-} from "../../../../src/Redux/Actions/login/loginAction";
+} from "../../../../src/Redux/Actions/Login/loginAction";
 
 describe("loginReducer test suite", () => {
   it("should return a default state", () => {

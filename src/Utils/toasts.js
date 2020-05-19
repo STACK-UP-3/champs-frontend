@@ -7,13 +7,6 @@ export const errorToast = message => {
   });
 };
 
-export const infoToast = message => {
-  toast.dismiss();
-  toast.info(message, {
-    position: toast.POSITION.TOP_CENTER
-  });
-};
-
 export const succcessToast = message => {
   toast.dismiss();
   toast.success(message, {

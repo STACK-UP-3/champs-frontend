@@ -1,0 +1,143 @@
+$page-background-color: #e5e5e5;
+$sidebar-background-image: url("../../../Assets/backgroundImage.svg");
+$font-family: "Roboto",
+sans-serif;
+$text-color: #f7f7f7;
+$box-shadow-color: hsla(0, 0%, 0%, 0.102);
+$button-background-color: #2e95c9;
+
+.email-contents {
+  background-color: $page-background-color;
+  bottom: 0;
+  display: block;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &__mini-logo {
+    margin-top: 1%;
+  }
+
+  &__message {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .email-response {
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+    &__button {
+      background-color: $button-background-color;
+      border: 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 15px $box-shadow-color;
+      height: 45px;
+      margin-top: 7%;
+      outline: none;
+      width: 15%;
+
+      &--content {
+        color: $text-color;
+        font-family: $font-family;
+        font-size: 15px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer {
+    background-color: $button-background-color;
+    bottom: 0;
+    color: $text-color;
+    font-weight: 900;
+    height: 65px;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+
+    &--text {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .email-contents {
+    font-size: 30px;
+    width: 100%;
+
+    &__mini-logo {
+      margin-left: 45%;
+      margin-top: 10%;
+    }
+
+    &__message {
+      margin-top: 15%;
+    }
+
+    .email-response {
+      width: 100%;
+
+      &__button {
+        margin-bottom: 48%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .email-contents {
+    font-size: 20px;
+    width: 100%;
+
+    &__mini-logo {
+      margin-left: 40%;
+      margin-top: 10%;
+    }
+
+    &__message {
+      margin-top: 15%;
+    }
+
+    .email-response {
+      width: 100%;
+
+      &__button {
+        margin-bottom: 60%;
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .email-contents {
+    font-size: 17px;
+    width: 100%;
+
+    &__mini-logo {
+      margin-left: 40%;
+      margin-top: 10%;
+    }
+
+    &__message {
+      margin-top: 15%;
+    }
+
+    .email-response {
+      width: 100%;
+
+      &__button {
+        margin-bottom: 45%;
+        width: 40%;
+      }
+    }
+  }
+}
