@@ -88,29 +88,6 @@ $error-message-text-color: #a33e10;
       text-decoration: none;
     }
   }
-
-  &__oauth {
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 44px;
-    width: 60%;
-
-    &__text {
-      color: $oauth-text-color;
-      display: block;
-      font: 18px / 21px $font-family;
-      font-weight: 900;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      text-decoration-line: underline;
-    }
-
-    &__logos {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-  }
 }
 
 @media only screen and (max-width: 1000px) {

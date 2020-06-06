@@ -12,7 +12,7 @@ const EmailVerificationResponse = () => {
         <p>You can now go to the login page</p>
       </div>
       <div className="email-response">
-        <Link to="/">
+        <Link to="/signin">
           <button type="button" className="email-response__button">
             <div className="email-response__button--content">go to sign in</div>
           </button>

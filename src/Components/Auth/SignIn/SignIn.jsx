@@ -5,11 +5,10 @@ import { ScaleLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { Link } from "react-router-dom";
 
+import SocialAuth from "../SocialAuth/SocialAuth.jsx";
 import Sidebar from "../../Shared/AuthSidebar/AuthSidebar.jsx";
 import "./SignIn.scss";
 import logo from "../../../Assets/logo.svg";
-import facebookLogo from "../../../Assets/facebookLogo.svg";
-import googleLogo from "../../../Assets/googleLogo.svg";
 import { login } from "../../../Redux/Actions/Login/loginAction";
 import { errorToast } from "../../../Utils/toasts";
 
@@ -140,28 +139,7 @@ export class SignIn extends Component {
                 </div>
               </button>
             </form>
-            <div className="signin-section__oauth">
-              <span className="signin-section__oauth__text">
-                {" "}
-                signin with your social network{" "}
-              </span>
-              <div>
-                <Link to="/#">
-                  <img
-                    src={`${facebookLogo}`}
-                    alt="facebookLogo"
-                    className="signin-section__oauth__logos"
-                  />
-                </Link>
-                <Link to="/#">
-                  <img
-                    src={`${googleLogo}`}
-                    alt="googleLogo"
-                    className="signin-section__oauth__logos"
-                  />
-                </Link>
-              </div>
-            </div>
+            <SocialAuth />
           </div>
         </section>
       </div>

@@ -7,7 +7,7 @@ const NavBar = () => (
     <nav className="header">
       <ul className="header">
         <li>
-          <Link to="/"> Home </Link>
+          <Link to="/signin"> Home </Link>
         </li>
         <li>
           <Link to="/signin">Sign In</Link>

@@ -54,7 +54,7 @@ const AuthSidebar = props => {
         <h1 className="auth-sidebar__app-name">Barefoot Nomad</h1>
         <div className="auth-sidebar__nav">
           <Link
-            to="/"
+            to="/signin"
             className={
               active === "signIn"
                 ? "auth-sidebar__nav__link auth-sidebar__nav__link--active"

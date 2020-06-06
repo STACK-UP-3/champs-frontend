@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { ScaleLoader } from "react-spinners";
 import { css } from "@emotion/core";
-import { Link } from "react-router-dom";
 
 import Sidebar from "../../Shared/AuthSidebar/AuthSidebar.jsx";
 import "./SignUp.scss";
 import logo from "../../../Assets/logo.svg";
-import facebookLogo from "../../../Assets/facebookLogo.svg";
-import googleLogo from "../../../Assets/googleLogo.svg";
+import SocialAuth from "../SocialAuth/SocialAuth.jsx";
 import { signUp } from "../../../Redux/Actions/SignUp/signUpAction";
 import { succcessToast } from "../../../Utils/toasts";
 
@@ -75,7 +73,7 @@ export class SignUp extends Component {
    */
   redirect = () => {
     const { history } = this.props;
-    history.push("/");
+    history.push("/signin");
   };
 
   /**
@@ -174,28 +172,7 @@ export class SignUp extends Component {
                 </div>
               </button>
             </form>
-            <div className="signup-section__oauth">
-              <span className="signup-section__oauth__text">
-                {" "}
-                signup with your social network{" "}
-              </span>
-              <div>
-                <Link to="/#">
-                  <img
-                    src={`${facebookLogo}`}
-                    alt="facebookLogo"
-                    className="signup-section__oauth__logos"
-                  />
-                </Link>
-                <Link to="/#">
-                  <img
-                    src={`${googleLogo}`}
-                    alt="googleLogo"
-                    className="signup-section__oauth__logos"
-                  />
-                </Link>
-              </div>
-            </div>
+            <SocialAuth />
           </div>
         </section>
       </div>
