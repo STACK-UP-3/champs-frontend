@@ -1,62 +1,59 @@
 import axios from "axios";
-
 import {
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL
-} from "../../ActionTypes/login/loginActionTypes";
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAIL
+} from "../../ActionTypes/SignUp/signUpActionTypes.js";
 import { errorToast, removeToast } from "../../../Utils/toasts";
 
 const basePath = "https://champs-bn-api.herokuapp.com/api/v1";
 
-export const loginRequest = () => {
+export const signUpRequest = () => {
   removeToast();
   return {
-    type: LOGIN_REQUEST
+    type: SIGNUP_REQUEST
   };
 };
 
-export const loginSuccess = payload => {
+export const signUpSuccess = payload => {
   removeToast();
   return {
-    type: LOGIN_SUCCESS,
+    type: SIGNUP_SUCCESS,
     payload
   };
 };
 
-export const loginFail = payload => {
+export const signUpFail = payload => {
   errorToast(payload);
   return {
-    type: LOGIN_FAIL,
+    type: SIGNUP_FAIL,
     payload
   };
 };
 
-export const login = formData => async dispatch => {
+export const signUp = formData => async dispatch => {
   try {
-    dispatch(loginRequest());
+    dispatch(signUpRequest());
     const apiCallConfig = {
       method: "post",
-      url: `${basePath}/auth/signin`,
+      url: `${basePath}/auth/signup`,
       data: formData
     };
     const response = await axios(apiCallConfig);
     const { data } = response;
-    const { token } = data.data;
-    localStorage.setItem("token", token);
-    dispatch(loginSuccess(data));
+    dispatch(signUpSuccess(data));
   } catch (error) {
     const { response } = error;
     if (response) {
       const { message } = response.data;
       if (!message) {
-        dispatch(loginFail(response.data.error));
+        dispatch(signUpFail(response.data.error));
       } else {
-        dispatch(loginFail(message));
+        dispatch(signUpFail(message));
       }
     } else {
       const { message } = error;
-      dispatch(loginFail(message));
+      dispatch(signUpFail(message));
     }
   }
 };

@@ -2,7 +2,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAIL
-} from "../../ActionTypes/login/loginActionTypes";
+} from "../../ActionTypes/Login/loginActionTypes";
 
 const initialState = {
   loading: false,

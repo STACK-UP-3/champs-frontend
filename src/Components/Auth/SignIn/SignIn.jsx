@@ -10,7 +10,7 @@ import "./SignIn.scss";
 import logo from "../../../Assets/logo.svg";
 import facebookLogo from "../../../Assets/facebookLogo.svg";
 import googleLogo from "../../../Assets/googleLogo.svg";
-import { login } from "../../../Redux/Actions/login/loginAction";
+import { login } from "../../../Redux/Actions/Login/loginAction";
 import { errorToast } from "../../../Utils/toasts";
 
 const loaderCss = css`
@@ -143,7 +143,7 @@ export class SignIn extends Component {
             <div className="signin-section__oauth">
               <span className="signin-section__oauth__text">
                 {" "}
-                with your social network{" "}
+                signin with your social network{" "}
               </span>
               <div>
                 <Link to="/#">

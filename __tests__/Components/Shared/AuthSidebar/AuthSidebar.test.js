@@ -23,7 +23,7 @@ describe("AuthSidebar test suite", () => {
       });
       const SignUpLink = component.find("#sign-up-link");
       expect(SignUpLink.props().className).toBe(
-        "auth-sidebar__nav__links auth-sidebar__nav__links--active"
+        "auth-sidebar__nav__link auth-sidebar__nav__link--active"
       );
     });
     it("should render without error", () => {

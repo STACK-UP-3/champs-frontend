@@ -1,0 +1,228 @@
+$blue-text-color: #2a96cc;
+$oauth-text-color: hsla(120, 100%, 0%, 0.302);
+$box-shadow-color: hsla(0, 0%, 0%, 0.102);
+$button-background-color: #2e95c9;
+$button-text-color: #f7f7f7;
+$input-text-color: hsla(0, 0%, 0%, 0.561);
+$input-bottom-border-color: hsla(0, 0%, 0%, 0.329);
+$font-family: "Roboto",
+sans-serif;
+$error-message-text-color: #a33e10;
+
+.main-signup {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+}
+
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  height: 563px;
+  margin: 30px auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  top: 5%;
+  width: 90%;
+
+  &__title {
+    display: none;
+  }
+
+  &__oauth {
+    margin-bottom: 20px;
+    margin-top: 44px;
+
+    &__text {
+      color: $oauth-text-color;
+      display: block;
+      font: 18px / 21px $font-family;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-decoration-line: underline;
+    }
+
+    &__logos {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 60%;
+
+  &__all-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+
+    &__input {
+      background-color: transparent;
+      border: 0;
+      border-bottom: $input-bottom-border-color solid 3px;
+      color: $input-text-color;
+      font: 24px / 33px $font-family;
+      font-weight: bold;
+      margin: 10px 0;
+      margin-left: 20%;
+      padding: 5px;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__right-inputs {
+    margin-left: -20%;
+    margin-right: 20%;
+    width: 120%;
+  }
+
+  &__left-inputs {
+    width: 120%;
+  }
+
+  &__button {
+    background-color: $button-background-color;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px $box-shadow-color;
+    display: block;
+    height: 61px;
+    margin-left: 20%;
+    outline: none;
+    width: 60%;
+
+    &--content {
+      color: $button-text-color;
+      display: flex;
+      flex-direction: row;
+      font: 900 25px / 29px $font-family;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .signup-section {
+    font-size: 25px;
+    width: 110%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-signup {
+    height: 90%;
+    left: 0;
+    position: relative;
+    top: 10%;
+    width: 100%;
+  }
+
+  .signup-section {
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: relative;
+    top: 70px;
+    transform: translate(0, 0);
+    width: 100%;
+
+    &__app-logo {
+      display: none;
+    }
+
+    &__title {
+      color: $blue-text-color;
+      display: block;
+      font-family: "Roboto";
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700px;
+      line-height: 42px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  .signup-form {
+    width: 48%;
+
+    &__all-inputs {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__right-inputs {
+      margin-left: -80px;
+      width: 130%;
+    }
+
+    &__left-inputs {
+      margin-left: -80px;
+      width: 130%;
+    }
+
+    &__button {
+      font-size: 24px;
+      height: 55px;
+      margin-left: -5px;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .signup-form {
+    width: 60%;
+    }
+  }
+
+@media only screen and (max-width: 380px) {
+  .signup-form {
+    width: 65%;
+
+    &__right-inputs {
+      margin-left: -50px;
+      width: 100%;
+    }
+
+    &__left-inputs {
+      margin-left: -50px;
+      width: 100%;
+    }
+    }
+  }
+
+@media only screen and (max-width: 320px) {
+  .signup-section {
+    &__title {
+      font-size: 28px;
+    }
+
+    .signup-form {
+      width: 65%;
+
+      &__input {
+        font-size: 22px;
+        line-height: 22px;
+        width: 170px;
+      }
+
+      &__button {
+        width: 180px;
+      }
+    }
+  }
+}
