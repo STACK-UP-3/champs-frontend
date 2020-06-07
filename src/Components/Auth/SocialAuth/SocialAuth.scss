@@ -1,0 +1,42 @@
+$oauth-text-color: hsla(120, 100%, 0%, 0.302);
+$font-family: "Roboto", sans-serif;
+
+.social-signin-section {
+  display: flex;
+  flex-direction: column;
+  height: 563px;
+  margin: 30px auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  top: 5%;
+  width: 60%;
+
+  &__oauth-logos {
+    background-color: transparent;
+    background-size: cover;
+    border: 0;
+    height: 53px;
+    margin: 3px;
+    outline: none;
+    width: 53px;
+  }
+
+  &__google {
+    background-image: url("../../../Assets/googleLogo.svg");
+  }
+
+  &__facebook {
+    background-image: url("../../../Assets/facebookLogo.svg");
+  }
+
+  &__oauth-text {
+    color: $oauth-text-color;
+    display: block;
+    font: 18px / 21px $font-family;
+    font-weight: 900;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-decoration-line: underline;
+  }
+}

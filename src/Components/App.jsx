@@ -20,6 +20,7 @@ const App = () => (
       <Router>
         <Switch>
           <Route exact path="/" component={SignInComponent} />
+          <Route exact path="/signin" component={SignInComponent} />
           <Route
             exact
             path="/verification"
