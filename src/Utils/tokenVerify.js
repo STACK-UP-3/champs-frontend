@@ -21,7 +21,7 @@ export const getTokenFromParams = params => {
   const verifiedToken = verifyToken(tokenReceived);
   if (verifiedToken) {
     localStorage.setItem("token", tokenReceived);
-    window.location.href = "https://champs-bn-api.herokuapp.com/api/v1";
+    window.location.href = "https://champs-frontend.herokuapp.com/home";
     return tokenReceived;
   }
   return localStorage.getItem("token");
