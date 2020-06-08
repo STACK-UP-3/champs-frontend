@@ -41,12 +41,9 @@ export class SignIn extends Component {
    * @returns {object} with a new state
    */
   componentDidMount() {
-    const { location, history } = this.props;
+    const { location } = this.props;
     if (location.state !== undefined && location.state.from !== undefined) {
       errorToast("Sign in to continue.");
-      const state = { ...location.state };
-      delete state.from;
-      history.replace({ ...location, state });
     }
   }
 
