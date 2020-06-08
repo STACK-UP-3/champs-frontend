@@ -10,7 +10,7 @@ $active-link-text-color: #000100;
 $font-family: "Roboto",
 sans-serif;
 
-.auth-sidebar-container {
+.auth-sidebars-container {
   overflow: hidden;
 }
 
@@ -23,7 +23,7 @@ sans-serif;
   top: 0;
 }
 
-.auth-sidebar {
+.auth-sidebars {
   background-color: $sidebar-background-color;
   background-image: $sidebar-background-image;
   display: block;
@@ -41,42 +41,6 @@ sans-serif;
     padding-left: 22px;
     padding-top: 15px;
     position: relative;
-  }
-
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: -3px;
-    top: 40%;
-
-    &-link {
-      color: $text-color;
-      font-family: "Roboto";
-      font-size: 24px;
-      font-weight: 900;
-      height: 73px;
-      line-height: 28px;
-      margin: 2px;
-      text-align: center;
-      text-decoration: none;
-      width: 144px;
-
-      &--active {
-        background-color: $text-color;
-        border: $text-color;
-        border-bottom-left-radius: 15px;
-        border-top-left-radius: 15px;
-        color: $active-link-text-color;
-        margin-right: 0;
-      }
-
-      &-text {
-        display: block;
-        font-family: $font-family;
-        margin: 20px 10px 10px;
-      }
-    }
   }
 
   &__footer {
@@ -100,20 +64,6 @@ sans-serif;
   transition: all 0.4s ease;
   width: 100%;
   z-index: 1;
-
-  &__button {
-    background-color: transparent;
-    border: 0;
-    display: block;
-    height: 100%;
-    outline: none;
-    position: absolute;
-    width: 100%;
-  }
-
-  &--active {
-    left: 0;
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -146,43 +96,13 @@ sans-serif;
       position: absolute;
       width: 65px;
     }
-
-    &__hamburger {
-      background-color: transparent;
-      border: 0;
-      display: inline-block;
-      margin-top: -1px;
-      outline: none;
-      position: absolute;
-      right: 15px;
-
-      &__image {
-        height: 30px;
-        width: 30px;
-      }
-    }
   }
 
-  .auth-sidebar {
+  .auth-sidebars {
     left: -100%;
     transition: all 0.7s ease;
     width: 80%;
     z-index: 2;
-
-    &--active {
-      left: 0;
-    }
-
-    &__nav {
-      left: -1px;
-
-      &-links--active {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 15px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 15px;
-      }
-    }
 
     &__footer {
       font-size: 16px;
@@ -192,7 +112,7 @@ sans-serif;
 }
 
 @media only screen and (max-width: 420px) {
-  .auth-sidebar {
+  .auth-sidebars {
     &__app-name {
       font-size: 24px;
     }

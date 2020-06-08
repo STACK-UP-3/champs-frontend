@@ -57,23 +57,23 @@ const AuthSidebar = props => {
             to="/signin"
             className={
               active === "signIn"
-                ? "auth-sidebar__nav__link auth-sidebar__nav__link--active"
-                : "auth-sidebar__nav__link"
+                ? "auth-sidebar__nav-link auth-sidebar__nav-link--active"
+                : "auth-sidebar__nav-link"
             }
             id="sign-in-link"
           >
-            <span className="auth-sidebar__nav__link__link-text">Sign In</span>
+            <span className="auth-sidebar__nav-link-text">Sign In</span>
           </Link>
           <Link
             to="/signup"
             className={
               active === "signUp"
-                ? "auth-sidebar__nav__link auth-sidebar__nav__link--active"
-                : "auth-sidebar__nav__link"
+                ? "auth-sidebar__nav-link auth-sidebar__nav-link--active"
+                : "auth-sidebar__nav-link"
             }
             id="sign-up-link"
           >
-            <span className="auth-sidebar__nav__link__link-text">Sign Up</span>
+            <span className="auth-sidebar__nav-link-text">Sign Up</span>
           </Link>
         </div>
         <footer className="auth-sidebar__footer">

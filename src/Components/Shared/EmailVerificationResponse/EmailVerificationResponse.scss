@@ -1,142 +1,181 @@
-$page-background-color: #e5e5e5;
-$sidebar-background-image: url("../../../Assets/backgroundImage.svg");
-$font-family: "Roboto",
-sans-serif;
-$text-color: #f7f7f7;
+$blue-text-color: #2a96cc;
+$oauth-text-color: hsla(120, 100%, 0%, 0.302);
 $box-shadow-color: hsla(0, 0%, 0%, 0.102);
 $button-background-color: #2e95c9;
+$button-text-color: #f7f7f7;
+$input-text-color: hsla(0, 0%, 0%, 0.561);
+$input-bottom-border-color: hsla(0, 0%, 0%, 0.329);
+$font-family: "Roboto",
+sans-serif;
 
-.email-contents {
-  background-color: $page-background-color;
-  bottom: 0;
-  display: block;
-  left: 0;
-  overflow: hidden;
+.email-section {
+  align-items: center;
+  font-family: $font-family;
+  height: 100vh;
+  margin-left: 37%;
   position: absolute;
   right: 0;
-  top: 0;
+  width: 60%;
+}
+
+.email-contents {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  height: 100vh;
+  margin-top: 7%;
+  padding: 20px;
+  position: relative;
 
   &__mini-logo {
-    margin-top: 1%;
+    padding: 20px;
   }
 
-  &__message {
-    margin-top: 5%;
-    text-align: center;
+  &__footer {
+    display: none;
   }
 
-  .email-response {
-    display: block;
-    justify-content: center;
-    text-align: center;
+  &__form {
+    margin-left: 10%;
+    padding: 10px;
+    width: 80%;
+
+    &--text {
+      justify-content: center;
+      margin-bottom: 10%;
+      margin-left: 80px;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
 
     &__button {
       background-color: $button-background-color;
       border: 0;
       border-radius: 15px;
       box-shadow: 0 10px 15px $box-shadow-color;
-      height: 45px;
-      margin-top: 7%;
+      display: block;
+      height: 51px;
+      margin-left: 140px;
       outline: none;
-      width: 15%;
+      width: 40%;
 
       &--content {
-        color: $text-color;
-        font-family: $font-family;
-        font-size: 15px;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-      }
-    }
-  }
-
-  &__footer {
-    background-color: $button-background-color;
-    bottom: 0;
-    color: $text-color;
-    font-weight: 900;
-    height: 65px;
-    left: 0;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-
-    &--text {
-      margin-top: 20px;
-    }
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .email-contents {
-    font-size: 30px;
-    width: 100%;
-
-    &__mini-logo {
-      margin-left: 45%;
-      margin-top: 10%;
-    }
-
-    &__message {
-      margin-top: 15%;
-    }
-
-    .email-response {
-      width: 100%;
-
-      &__button {
-        margin-bottom: 48%;
+        color: $button-text-color;
+        display: flex;
+        flex-direction: row;
+        font: 900 25px / 29px $font-family;
+        font-size: 23px;
+        justify-content: center;
       }
     }
   }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 1000px) {
+  .email-section {
+    width: 60%;
+  }
+
   .email-contents {
-    font-size: 20px;
-    width: 100%;
+    width: 80%;
 
-    &__mini-logo {
-      margin-left: 40%;
-      margin-top: 10%;
-    }
+    &__form {
+      margin-left: 15%;
+      width: 80%;
 
-    &__message {
-      margin-top: 15%;
-    }
+      &--title {
+        margin-bottom: 20%;
+        margin-left: -10%;
+      }
 
-    .email-response {
-      width: 100%;
+      &--text {
+        margin-bottom: 20%;
+        margin-left: -10%;
+      }
 
       &__button {
-        margin-bottom: 60%;
-        width: 40%;
+        height: 67px;
+        margin-left: -1%;
+        width: 70%;
       }
     }
   }
 }
 
-@media only screen and (max-width: 380px) {
-  .email-contents {
-    font-size: 17px;
+@media only screen and (max-width: 640px) {
+  .email-section {
     width: 100%;
+  }
+
+  .email-contents {
+    margin-top: 15%;
+    width: 90%;
 
     &__mini-logo {
-      margin-left: 40%;
-      margin-top: 10%;
+      display: none;
     }
 
-    &__message {
-      margin-top: 15%;
+    &__form {
+      font-size: 20px;
+      width: 80%;
+
+      &__button {
+        height: 57px;
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .email-section {
+    width: 100%;
+  }
+
+  .email-contents {
+    margin-top: 15%;
+    width: 80%;
+
+    &__mini-logo {
+      display: none;
     }
 
-    .email-response {
+    &__form {
+      font-size: 20px;
+      margin-left: 30%;
       width: 100%;
 
       &__button {
-        margin-bottom: 45%;
-        width: 40%;
+        height: 47px;
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .email-section {
+    width: 100%;
+  }
+
+  .email-contents {
+    margin-top: 15%;
+    width: 70%;
+
+    &__mini-logo {
+      display: none;
+    }
+
+    &__form {
+      font-size: 20px;
+      width: 100%;
+
+      &__button {
+        height: 47px;
+        width: 70%;
       }
     }
   }
