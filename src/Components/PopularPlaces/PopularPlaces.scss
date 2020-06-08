@@ -1,0 +1,93 @@
+$box-shadow-color: hsla(0, 0%, 0%, 0.102);
+$button-background-color: #2a96cc;
+$button-text-color: #fffbfb;
+$font-family: "Roboto", sans-serif;
+$link-text-color: #2a96cc;
+
+.popular-place {
+  background: #ffffff;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 20px;
+  width: 325px;
+
+  .popular-places-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 285px;
+
+    &__heading {
+      display: inline-block;
+      font: normal 20px / 23px $font-family;
+      margin: 0;
+    }
+
+    &__link {
+      color: $link-text-color;
+      font: normal 20px / 23px $font-family;
+    }
+  }
+
+  .popular-place-container {
+    max-height: unset;
+  }
+
+  &__show-button {
+    background-color: $button-background-color;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px $box-shadow-color;
+    color: $button-text-color;
+    display: block;
+    font: 900 25px / 29px $font-family;
+    height: 61px;
+    margin: 20px auto;
+    width: 200px;
+    outline: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .popular-place {
+    margin: 0 auto;
+    padding: 5px;
+    width: 95%;
+
+    .popular-places-header {
+      width: 80%;
+    }
+
+    .popular-place-container {
+      max-height: 200px;
+      overflow: hidden;
+    }
+
+    &__show-button {
+      font: 700 20px / 24px $font-family;
+      width: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .popular-place {
+    padding: 5px;
+
+    .popular-places-header {
+      width: 95%;
+    }
+
+    .popular-place-container {
+      max-height: 200px;
+      overflow: hidden;
+    }
+
+    &__show-button {
+      font: 700 20px / 24px $font-family;
+      width: 150px;
+    }
+  }
+}

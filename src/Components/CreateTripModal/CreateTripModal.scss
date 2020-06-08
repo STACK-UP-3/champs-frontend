@@ -1,0 +1,82 @@
+$input-text-color: hsla(0, 0%, 0%, 0.5);
+$placeholder-color: hsla(0, 0%, 0%, 0.3);
+$input-bottom-border-color: hsla(0, 0%, 0%, 0.3);
+$close-button-text-color: hsla(0, 0%, 0%, 0.6);
+$font-family: "Roboto", sans-serif;
+$modal-background-color: #f8f8f8;
+$transparent-modal-background: hsla(0, 0%, 0%, 0.439);
+$modal-header-color: hsla(0, 0%, 0%, 0.65);
+
+.modal {
+  background-color: $transparent-modal-background;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.modal-contents {
+  background-color: $modal-background-color;
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  min-height: 60%;
+  padding: 2% 5%;
+  width: 750px;
+
+  .modal-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__title {
+      color: $modal-header-color;
+      font: 500 30px / 35px $font-family;
+    }
+
+    &__close-button {
+      background-color: transparent;
+      border: 0;
+      color: $close-button-text-color;
+      cursor: pointer;
+      font: 900 35px / 41px $font-family;
+      outline: none;
+    }
+  }
+
+  &__trip-type-select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: $input-bottom-border-color solid 3px;
+    color: $placeholder-color;
+    font: 600 24px / 33px $font-family;
+    height: 45px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 250px;
+
+    &:focus {
+      color: $input-text-color;
+      outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    position: fixed;
+
+    .modal-contents {
+      border-radius: 0;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+  }
+}

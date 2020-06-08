@@ -27,4 +27,15 @@ export const getTokenFromParams = params => {
   return localStorage.getItem("token");
 };
 
+export const getValuesFromToken = () => {
+  const token = getTokenFromParams();
+  let jsonPayload;
+  try {
+    jsonPayload = jwtDecode(token);
+  } catch (error) {
+    return false;
+  }
+  return jsonPayload;
+};
+
 export default verifyToken;

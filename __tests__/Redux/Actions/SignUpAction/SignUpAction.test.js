@@ -10,7 +10,7 @@ describe("Signup action", () => {
     moxios.uninstall();
   });
 
-  test("Store is updated correctly with sucessfully created account", async () => {
+  it("Store is updated correctly with sucessfully created account", async () => {
     const expectedResponse = {
       firstname: "Aggy",
       lastname: "Ann",
@@ -42,7 +42,7 @@ describe("Signup action", () => {
     expect(newState.signUp.status).toBe(expectedResponse.status);
   });
 
-  test("Store is updated correctly with an error when response have the message property", async () => {
+  it("Store is updated correctly with an error when response have the message property", async () => {
     const expectedResponse = {
       message: "password mismatch"
     };
@@ -68,7 +68,7 @@ describe("Signup action", () => {
     expect(newState.signUp.message).toBe("");
   });
 
-  test("Store is updated correctly with an error when response have the error property", async () => {
+  it("Store is updated correctly with an error when response have the error property", async () => {
     const expectedResponse = {
       error: "password must be at least 3 characters"
     };
@@ -94,7 +94,7 @@ describe("Signup action", () => {
     expect(newState.signUp.message).toBe("");
   });
 
-  test("Store is updated correctly with an error when we don't have response property", async () => {
+  it("Store is updated correctly with an error when we don't have response property", async () => {
     const formData = {
       firstname: "Aggy",
       lastname: "Ann",

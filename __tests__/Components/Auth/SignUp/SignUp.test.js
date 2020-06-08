@@ -9,10 +9,19 @@ import {
 
 const setup = props => {
   const { signUpAction, history, status, loading } = props;
+  let historyMock;
+  if (history) {
+    historyMock = history;
+  } else {
+    historyMock = {
+      push: jest.fn(),
+      replace: jest.fn()
+    };
+  }
   const wrapper = shallow(
     <SignUp
       signUpAction={signUpAction}
-      history={history}
+      history={historyMock}
       status={status}
       loading={loading}
     />
@@ -239,7 +248,7 @@ describe("Sign up test suite", () => {
       expect(dispatch.mock.calls[0][0]).toBeInstanceOf(Function);
     });
 
-    test("mapStateToProps Should return an object", () => {
+    it("mapStateToProps Should return an object", () => {
       const expectedObject = {
         status: 400,
         loading: false

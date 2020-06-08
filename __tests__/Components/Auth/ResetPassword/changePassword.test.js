@@ -10,11 +10,21 @@ import {
 const setup = props => {
   const { passwordResetAction, isPasswordUpdated, history, loading } = props;
 
+  let historyMock;
+  if (history) {
+    historyMock = history;
+  } else {
+    historyMock = {
+      push: jest.fn(),
+      replace: jest.fn()
+    };
+  }
+
   const wrapper = shallow(
     <UpdatePassword
       passwordResetAction={passwordResetAction}
       isPasswordUpdated={isPasswordUpdated}
-      history={history}
+      history={historyMock}
       loading={loading}
     />
   );

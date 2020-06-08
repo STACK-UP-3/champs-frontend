@@ -1,0 +1,72 @@
+$block-background-color: #fefefe;
+$block-box-shadow-color: hsla(0, 0%, 0%, 0.05);
+$trip-status-text-color: hsla(120, 100%, 0%, 0.5);
+$number-of-trips-text-color: #000000;
+$font-family: "Roboto", sans-serif;
+
+.trip-status {
+  background-color: $block-background-color;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px $block-box-shadow-color;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 140px;
+  margin: 5px;
+  padding: 20px 30px;
+  position: relative;
+  width: 175px;
+
+  &__icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  &__number-of-trips {
+    color: $number-of-trips-text-color;
+    display: inline-block;
+    font: normal 40px / 47px $font-family;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 5px;
+    position: absolute;
+  }
+
+  &__status-text {
+    color: $trip-status-text-color;
+    display: block;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .trip-status {
+    border-radius: 12px;
+    height: 90px;
+    padding: 5px 7.5px;
+    width: 30%;
+
+    &__icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    &__number-of-trips {
+      font: normal 30px / 37px $font-family;
+      height: 30px;
+      margin-left: 10px;
+      margin-top: 0;
+      position: absolute;
+    }
+
+    &__status-text {
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 5px;
+    }
+  }
+}

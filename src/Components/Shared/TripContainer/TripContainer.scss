@@ -1,0 +1,59 @@
+$container-background-color: #fffbfb;
+$font-family: "Roboto", sans-serif;
+
+.trip-container {
+  background-color: $container-background-color;
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: flex;
+  height: 131px;
+  margin: 20px 0;
+  padding: 20px;
+  width: 560px;
+
+  .trip-container-content {
+    height: 70px;
+    margin-left: 20px;
+
+    &__title {
+      color: rgba(0, 1, 0, 0.8);
+      font: 900 20px / 23px $font-family;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    &__date {
+      color: rgba(0, 1, 0, 0.5);
+      display: block;
+      font: 500 20px / 23px $font-family;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .trip-container {
+    padding: 5px;
+    width: 97%;
+
+    .trip-container-content {
+      height: unset;
+      margin-left: 5px;
+      padding-top: 15px;
+      &__title {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 373px) {
+  .trip-container {
+    height: unset;
+
+    .trip-container-content {
+      margin-left: 10px;
+    }
+  }
+}

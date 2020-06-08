@@ -1,0 +1,47 @@
+$font-family: "Roboto", sans-serif;
+
+.Place-container {
+  background: #f7f7f7;
+  display: flex;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 80px;
+  margin: 20px auto;
+  padding: 8px;
+  position: relative;
+  width: 285px;
+
+  .place-info {
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+
+    &__country {
+      color: #000000;
+      display: block;
+      position: absolute;
+      font: 900 20px / 23px $font-family;
+      top: 0;
+    }
+
+    &__city {
+      bottom: 0;
+      color: rgba(0, 1, 0, 0.6);
+      display: block;
+      font: normal 20px / 23px $font-family;
+      position: absolute;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .Place-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .Place-container {
+    width: 95%;
+  }
+}

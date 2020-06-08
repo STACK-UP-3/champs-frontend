@@ -1,20 +1,24 @@
-/* eslint-disable no-console */
 import React from "react";
 import { mount } from "enzyme";
 import { MemoryRouter, Redirect } from "react-router-dom";
 import sinon from "sinon";
+import { Provider } from "react-redux";
+import store from "../../../../src/Redux/store";
+
 import Home from "../../../../src/Components/Home/Home.jsx";
 import SignInComponent from "../../../../src/Components/Auth/SignIn/SignIn.jsx";
-
 import {
   ProtectedRoute,
   mapStateToProps
 } from "../../../../src/Components/Shared/ProtectedRoute/ProtectedRoute.jsx";
 
 const setup = value => {
+  const mockStore = store;
   const wrapper = mount(
     <MemoryRouter initialEntries={["/home"]}>
-      <ProtectedRoute isAuthenticated={value} component={Home} />
+      <Provider store={mockStore}>
+        <ProtectedRoute isAuthenticated={value} component={Home} />
+      </Provider>
     </MemoryRouter>
   );
   return { wrapper };
@@ -42,10 +46,11 @@ describe("ProtectedRoute test suite", () => {
     );
     expect(stub.calledOnce).toBe(true);
     expect(wrapper.find(Home)).toHaveLength(0);
+    // eslint-disable-next-line no-console
     console.error.restore();
   });
 
-  test("mapStateToProps Should return an object", () => {
+  it("mapStateToProps Should return an object", () => {
     const expectedObject = {
       isAuthenticated: true
     };

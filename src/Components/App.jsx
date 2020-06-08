@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./App.scss";
 import store from "../Redux/store";
-import Home from "./Home/Home.jsx";
+import HomeComponent from "./Home/Home.jsx";
 import SignUpComponent from "./Auth/SignUp/SignUp.jsx";
 import SignInComponent from "./Auth/SignIn/SignIn.jsx";
 import Protected from "./Shared/ProtectedRoute/ProtectedRoute.jsx";
@@ -21,21 +21,21 @@ const App = () => (
     <div>
       <Router>
         <Switch>
-          <Route exact path="/" component={SignInComponent} />
-          <Route exact path="/signin" component={SignInComponent} />
-          <Route
-            exact
-            path="/verify-email"
-            component={EmailVerificationResponse}
-          />
-          <Protected exact path="/home" component={Home} />
+          <Protected exact path="/home" component={HomeComponent} />
           <Route exact path="/signup" component={SignUpComponent} />
           <Route
             exact
             path="/forgot-password"
             component={ResetPasswordComponent}
           />
+          <Route
+            exact
+            path="/verify-email"
+            component={EmailVerificationResponse}
+          />
           <Route exact path="/reset-password" component={ChangePassword} />
+          <Route exact path="/signin" component={SignInComponent} />
+          <Route exact path="/" component={SignInComponent} />
         </Switch>
       </Router>
     </div>

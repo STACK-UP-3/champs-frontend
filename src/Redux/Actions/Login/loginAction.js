@@ -1,4 +1,5 @@
 import axios from "axios";
+import basePath from "../../../Utils/basePath";
 
 import {
   LOGIN_REQUEST,
@@ -6,8 +7,6 @@ import {
   LOGIN_FAIL
 } from "../../ActionTypes/Login/loginActionTypes";
 import { errorToast, removeToast } from "../../../Utils/toasts";
-
-const basePath = "https://champs-bn-api.herokuapp.com/api/v1";
 
 export const loginRequest = () => {
   removeToast();

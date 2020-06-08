@@ -182,7 +182,7 @@ describe("Sign in test suite", () => {
       expect(dispatch.mock.calls[0][0]).toBeInstanceOf(Function);
     });
 
-    test("mapStateToProps Should return an object", () => {
+    it("mapStateToProps Should return an object", () => {
       const expectedObject = {
         isAuthenticated: false,
         loading: false

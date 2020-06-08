@@ -10,7 +10,7 @@ describe("login action", () => {
     moxios.uninstall();
   });
 
-  test("Store is updated correctly with sucessfully signed in user", async () => {
+  it("Store is updated correctly with sucessfully signed in user", async () => {
     const expectedResponse = {
       token: "I am a token",
       user: {
@@ -42,7 +42,7 @@ describe("login action", () => {
     expect(newState.login.token).toBe(expectedResponse.token);
   });
 
-  test("Store is updated correctly with an error when response have the message property", async () => {
+  it("Store is updated correctly with an error when response have the message property", async () => {
     const expectedResponse = {
       message: "Incorect email or password"
     };
@@ -66,7 +66,7 @@ describe("login action", () => {
     expect(newState.login.user).toStrictEqual({});
   });
 
-  test("Store is updated correctly with an error when response have the error property", async () => {
+  it("Store is updated correctly with an error when response have the error property", async () => {
     const expectedResponse = {
       error: "email must be a valid email"
     };
@@ -90,7 +90,7 @@ describe("login action", () => {
     expect(newState.login.user).toStrictEqual({});
   });
 
-  test("Store is updated correctly with an error when we don't have response property", async () => {
+  it("Store is updated correctly with an error when we don't have response property", async () => {
     const formData = {
       email: "chrisdummy@email.com",
       password: "1234554"

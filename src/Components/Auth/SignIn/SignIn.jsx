@@ -35,9 +35,8 @@ export class SignIn extends Component {
   }
 
   /**
-   * This method is executed everytime the component updates.
-   * @param {object} prevProps previous props of the component.
-   * @returns {object} with a new state
+   * This method is executed when the component mounts.
+   * @returns {void}
    */
   componentDidMount() {
     const { location } = this.props;
@@ -47,7 +46,7 @@ export class SignIn extends Component {
   }
 
   /**
-   * This method handles the the onSubmit event.
+   * This method handles the the onChange event.
    * @param {object} event event information.
    * @returns {void}
    */

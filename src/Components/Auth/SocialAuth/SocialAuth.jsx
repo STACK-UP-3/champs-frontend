@@ -1,9 +1,9 @@
 import React from "react";
 import "./SocialAuth.scss";
+import basePath from "../../../Utils/basePath";
 
 const SocialAuth = () => {
   const providers = ["google", "facebook"];
-  const basePath = "https://champs-bn-api.herokuapp.com/api/v1";
 
   const handleSignInClick = provider => {
     window.open(`${basePath}/auth/${provider}`, "_self");
