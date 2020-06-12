@@ -1,0 +1,133 @@
+.profile-identity {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  align-items: center;
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    img {
+      margin-right: 40px;
+      margin-left: 10px;
+
+    }
+  }
+
+  &__edit-button {
+    margin: 0 0 0 auto;
+    cursor: pointer;
+
+    button {
+      margin: 5px;
+    }
+  }
+
+  &__labels .full-name {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 24px;
+  }
+
+  &__labels .role {
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.content-container > div {
+  margin: 5px 15px;
+}
+
+.content-container input {
+  outline: none;
+  border: none;
+  background-color: #f7f7f7;
+  font-size: 14px;
+}
+
+.content-container input::placeholder {
+  background-color: #f7f7f7;
+  font-size: 10px;
+}
+
+.content-container input[type="date"] {
+  background-color: #f7f7f7;
+  width: 178px;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.content-container select {
+  background-color: #f7f7f7;
+  width: 185px;
+  max-width: 200px;
+  font-size: 14px;
+  border: none;
+  line-height: 21px;
+  color: black;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.content-container .isEditable input[type="email"] {
+  border-bottom: 1px solid #555;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.content-container .isEditable input[type="text"], .profile-identity__labels .isEditable input[type="text"] {
+  border-bottom: 1px solid #555;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.content-container .isEditable input[type="date"] {
+  border-bottom: 1px solid #555;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.content-container .isEditable select {
+  border-bottom: 1px solid #555;
+  padding-left: 11px;
+  padding-right: 11px;
+  -webkit-appearance: auto;
+    -moz-appearance: auto;
+}
+
+.content-container input[type="email"]::placeholder,
+input[type="text"]::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+  width: 216px;
+}
+
+.profile-details {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+}
+
+.label-field {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  width: 185px;
+}
