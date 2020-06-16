@@ -80,10 +80,9 @@ export class SignIn extends Component {
    */
   render() {
     const { email, password } = this.state;
-    const { location, history, isAuthenticated, loading } = this.props;
-    const { from } = location.state || { from: { pathname: "/home" } };
+    const { history, isAuthenticated, loading } = this.props;
     if (isAuthenticated === true) {
-      setTimeout(() => history.push(from.pathname), 500);
+      setTimeout(() => history.push("/home"), 500);
     }
 
     return (
@@ -118,7 +117,10 @@ export class SignIn extends Component {
                 required
                 className="signin-form__input"
               />
-              <Link to="/forgot" className="signin-form__forgot-password">
+              <Link
+                to="/forgot-password"
+                className="signin-form__forgot-password"
+              >
                 Forgot password ?
               </Link>
               <button type="submit" className="signin-form__button">

@@ -1,28 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import miniLogo from "../../../Assets/miniLogo.svg";
+import logo from "../../../Assets/logo.svg";
 import "./EmailVerificationResponse.scss";
+import ResetSideBar from "../ResetSideBar/ResetSideBar.jsx";
 
 const EmailVerificationResponse = () => {
   return (
-    <div className="email-contents">
-      <img src={miniLogo} alt="Logo" className="email-contents__mini-logo" />
-      <div className="email-contents__message">
-        <h3>You have successfully verified your email.</h3>
-        <p>You can now go to the login page</p>
-      </div>
-      <div className="email-response">
-        <Link to="/signin">
-          <button type="button" className="email-response__button">
-            <div className="email-response__button--content">go to sign in</div>
-          </button>
-        </Link>
-      </div>
-      <footer className="email-contents__footer">
-        <div className="email-contents__footer--text">
-          Copyright © 2020 Barefoot Nomad
+    <div className="container">
+      <ResetSideBar />
+      <section className="email-section">
+        <div className="email-contents">
+          <img
+            src={`${logo}`}
+            alt="Logo"
+            className="email-contents__mini-logo"
+          />
+          <form className="email-contents__form">
+            <h3 className="email-contents__form--title">
+              You have successfully verified your email.
+            </h3>
+            <p className="email-contents__form--text">
+              You can now go to the login page
+            </p>
+            <Link to="/" className="email-contents__form__link">
+              <button type="button" className="email-contents__form__button">
+                <div className="email-contents__form__button--content">
+                  Go to Sign In
+                </div>
+              </button>
+            </Link>
+          </form>
+          <footer className="email-contents__footer">
+            <div className="email-contents__footer--text">
+              Copyright © 2020 Barefoot Nomad
+            </div>
+          </footer>
         </div>
-      </footer>
+      </section>
     </div>
   );
 };
