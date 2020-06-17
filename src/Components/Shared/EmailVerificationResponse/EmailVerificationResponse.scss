@@ -18,7 +18,7 @@ sans-serif;
   width: 60%;
 }
 
-.email-contents {
+.email-content {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -32,44 +32,34 @@ sans-serif;
     padding: 20px;
   }
 
-  &__footer {
-    display: none;
+  &__link {
+    text-decoration: none;
   }
 
   &__form {
     margin-left: 10%;
     padding: 10px;
     width: 80%;
+  }
 
-    &--text {
+  &__button {
+    background-color: $button-background-color;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px $box-shadow-color;
+    display: block;
+    height: 51px;
+    margin-left: 140px;
+    outline: none;
+    width: 40%;
+
+    &-content {
+      color: $button-text-color;
+      display: flex;
+      flex-direction: row;
+      font: 900 25px / 29px $font-family;
+      font-size: 23px;
       justify-content: center;
-      margin-bottom: 10%;
-      margin-left: 80px;
-    }
-
-    &__link {
-      text-decoration: none;
-    }
-
-    &__button {
-      background-color: $button-background-color;
-      border: 0;
-      border-radius: 15px;
-      box-shadow: 0 10px 15px $box-shadow-color;
-      display: block;
-      height: 51px;
-      margin-left: 140px;
-      outline: none;
-      width: 40%;
-
-      &--content {
-        color: $button-text-color;
-        display: flex;
-        flex-direction: row;
-        font: 900 25px / 29px $font-family;
-        font-size: 23px;
-        justify-content: center;
-      }
     }
   }
 }
@@ -79,28 +69,28 @@ sans-serif;
     width: 60%;
   }
 
-  .email-contents {
+  .email-content {
     width: 80%;
 
     &__form {
       margin-left: 15%;
       width: 80%;
+    }
 
-      &--title {
-        margin-bottom: 20%;
-        margin-left: -10%;
-      }
+    &__title {
+      margin-bottom: 20%;
+      margin-left: -10%;
+    }
 
-      &--text {
-        margin-bottom: 20%;
-        margin-left: -10%;
-      }
+    &__text {
+      margin-bottom: 20%;
+      margin-left: -10%;
+    }
 
-      &__button {
-        height: 67px;
-        margin-left: -1%;
-        width: 70%;
-      }
+    &__button {
+      height: 67px;
+      margin-left: -1%;
+      width: 70%;
     }
   }
 }
@@ -110,8 +100,8 @@ sans-serif;
     width: 100%;
   }
 
-  .email-contents {
-    margin-top: 15%;
+  .email-content {
+    margin-top: 30%;
     width: 90%;
 
     &__mini-logo {
@@ -121,11 +111,11 @@ sans-serif;
     &__form {
       font-size: 20px;
       width: 80%;
+    }
 
-      &__button {
-        height: 57px;
-        width: 70%;
-      }
+    &__button {
+      height: 57px;
+      width: 70%;
     }
   }
 }
@@ -135,8 +125,8 @@ sans-serif;
     width: 100%;
   }
 
-  .email-contents {
-    margin-top: 15%;
+  .email-content {
+    margin-top: 30%;
     width: 80%;
 
     &__mini-logo {
@@ -147,36 +137,11 @@ sans-serif;
       font-size: 20px;
       margin-left: 30%;
       width: 100%;
-
-      &__button {
-        height: 47px;
-        width: 70%;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .email-section {
-    width: 100%;
-  }
-
-  .email-contents {
-    margin-top: 15%;
-    width: 70%;
-
-    &__mini-logo {
-      display: none;
     }
 
-    &__form {
-      font-size: 20px;
-      width: 100%;
-
-      &__button {
-        height: 47px;
-        width: 70%;
-      }
+    &__button {
+      height: 47px;
+      width: 70%;
     }
   }
 }

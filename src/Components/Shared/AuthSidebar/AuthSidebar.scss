@@ -9,6 +9,7 @@ $box-shadow-color2: rgba(0, 0, 0, 0.12);
 $active-link-text-color: #000100;
 $font-family: "Roboto",
 sans-serif;
+$right-border-radius: 0 15px 15px 0;
 
 .auth-sidebar-container {
   overflow: hidden;
@@ -156,7 +157,7 @@ sans-serif;
       position: absolute;
       right: 15px;
 
-      &__image {
+      &-image {
         height: 30px;
         width: 30px;
       }
@@ -176,11 +177,8 @@ sans-serif;
     &__nav {
       left: -1px;
 
-      &-links--active {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 15px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 15px;
+      &-link--active {
+        border-radius: $right-border-radius;
       }
     }
 

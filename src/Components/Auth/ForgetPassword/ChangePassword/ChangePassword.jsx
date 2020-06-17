@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../../Assets/logo.svg";
 import "./ChangePassword.scss";
 
-import ResetSideBar from "../../../Shared/ResetSideBar/ResetSideBar.jsx";
+import Sidebar from "../../../Shared/AuthSidebar/AuthSidebar.jsx";
 import { passwordUpdate } from "../../../../Redux/Actions/PasswordReset/passwordResetAction";
 import { succcessToast } from "../../../../Utils/toasts";
 
@@ -84,7 +84,7 @@ export class UpdatePassword extends Component {
 
     return (
       <div className="container">
-        <ResetSideBar />
+        <Sidebar active="signIn" />
         <section className="reset-password">
           <div className="update-password">
             <img
@@ -102,7 +102,7 @@ export class UpdatePassword extends Component {
                 placeholder="New Password"
                 onChange={this.onChange}
                 required
-                className="update-password__form--input"
+                className="update-password__input"
               />
               <input
                 type="password"
@@ -112,16 +112,13 @@ export class UpdatePassword extends Component {
                 placeholder="Confirm Password"
                 onChange={this.onChange}
                 required
-                className="update-password__form--input"
+                className="update-password__input"
               />
-              <Link
-                to="/signin"
-                className="update-password__form--backto-signin"
-              >
+              <Link to="/signin" className="update-password__link">
                 go back to sign in
               </Link>
-              <button type="submit" className="update-password__form--button">
-                <div className="update-password__form--button-content">
+              <button type="submit" className="update-password__button">
+                <div className="update-password__button-content">
                   {loading ? (
                     <ScaleLoader
                       loading={loading}

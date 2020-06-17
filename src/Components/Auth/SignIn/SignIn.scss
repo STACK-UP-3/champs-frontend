@@ -67,7 +67,7 @@ $error-message-text-color: #a33e10;
       outline: none;
       width: 100%;
 
-      &--content {
+      &-content {
         color: $button-text-color;
         display: flex;
         flex-direction: row;
@@ -97,6 +97,10 @@ $error-message-text-color: #a33e10;
 }
 
 @media only screen and (max-width: 600px) {
+  .container {
+    height: 700px;
+  }
+
   .main-signin {
     height: 90%;
     left: 0;
@@ -110,7 +114,7 @@ $error-message-text-color: #a33e10;
     left: 0;
     padding: 0;
     position: relative;
-    top: 70px;
+    top: 30px;
     transform: translate(0, 0);
     width: 100%;
 
@@ -132,20 +136,20 @@ $error-message-text-color: #a33e10;
 
     &__form {
       width: 48%;
+    }
 
-      &__forgot-password {
-        margin-right: 0;
-      }
+    &__forgot-password {
+      margin-right: 0;
+    }
 
-      &__button {
-        font-size: 24px;
-        height: 55px;
-        width: 100%;
-      }
+    &__button {
+      font-size: 24px;
+      height: 55px;
+      width: 100%;
+    }
 
-      &__input {
-        width: 100%;
-      }
+    &__input {
+      width: 100%;
     }
 
     &__oauth {
@@ -180,16 +184,16 @@ $error-message-text-color: #a33e10;
 
     &__form {
       width: 65%;
+    }
 
-      &__input {
-        font-size: 22px;
-        line-height: 22px;
-        width: 200px;
-      }
+    &__input {
+      font-size: 22px;
+      line-height: 22px;
+      width: 200px;
+    }
 
-      &__button {
-        width: 180px;
-      }
+    &__button {
+      width: 180px;
     }
   }
 }

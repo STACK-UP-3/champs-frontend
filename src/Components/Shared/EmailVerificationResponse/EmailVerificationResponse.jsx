@@ -9,32 +9,27 @@ const EmailVerificationResponse = () => {
     <div className="container">
       <ResetSideBar />
       <section className="email-section">
-        <div className="email-contents">
+        <div className="email-content">
           <img
             src={`${logo}`}
             alt="Logo"
-            className="email-contents__mini-logo"
+            className="email-content__mini-logo"
           />
-          <form className="email-contents__form">
-            <h3 className="email-contents__form--title">
+          <form className="email-content__form">
+            <h3 className="email-content__title">
               You have successfully verified your email.
             </h3>
-            <p className="email-contents__form--text">
+            <p className="email-content__text">
               You can now go to the login page
             </p>
-            <Link to="/" className="email-contents__form__link">
-              <button type="button" className="email-contents__form__button">
-                <div className="email-contents__form__button--content">
+            <Link to="/" className="email-content__link">
+              <button type="button" className="email-content__button">
+                <div className="email-content__button-content">
                   Go to Sign In
                 </div>
               </button>
             </Link>
           </form>
-          <footer className="email-contents__footer">
-            <div className="email-contents__footer--text">
-              Copyright © 2020 Barefoot Nomad
-            </div>
-          </footer>
         </div>
       </section>
     </div>
