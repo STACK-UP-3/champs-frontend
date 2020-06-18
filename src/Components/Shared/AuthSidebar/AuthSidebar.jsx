@@ -38,7 +38,7 @@ const AuthSidebar = props => {
           <img
             src={hamburger}
             alt="hamburger"
-            className="auth-navbar__hamburger__image"
+            className="auth-navbar__hamburger-image"
           />
         </button>
       </nav>

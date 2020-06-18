@@ -32,7 +32,8 @@ export class SignUp extends Component {
       lastname: "",
       username: "",
       email: "",
-      password: ""
+      password: "",
+      confirmPassword: ""
     };
   }
 
@@ -56,13 +57,21 @@ export class SignUp extends Component {
   onSubmit = event => {
     event.preventDefault();
     const { signUpAction } = this.props;
-    const { firstname, lastname, username, email, password } = this.state;
+    const {
+      firstname,
+      lastname,
+      username,
+      email,
+      password,
+      confirmPassword
+    } = this.state;
     const form = {
       firstname,
       lastname,
       username,
       email,
-      password
+      password,
+      confirmPassword
     };
     signUpAction(form);
   };
@@ -81,7 +90,14 @@ export class SignUp extends Component {
    * @returns {JSX} to be rendered on the screen
    */
   render() {
-    const { firstname, lastname, username, email, password } = this.state;
+    const {
+      firstname,
+      lastname,
+      username,
+      email,
+      password,
+      confirmPassword
+    } = this.state;
     const { loading, status } = this.props;
     if (status === 201) {
       succcessToast(
@@ -101,8 +117,8 @@ export class SignUp extends Component {
             />
             <h1 className="signup-section__title">Sign Up</h1>
             <form onSubmit={this.onSubmit} className="signup-form">
-              <div className="signup-form__all-inputs">
-                <div className="signup-form__right-inputs">
+              <div className="signup-form__inputs-container">
+                <div className="signup-form__right-side-input-fields">
                   <input
                     type="firstname"
                     name="firstname"
@@ -111,7 +127,7 @@ export class SignUp extends Component {
                     placeholder="First Name"
                     onChange={this.onChange}
                     required
-                    className="signup-form__all-inputs__input"
+                    className="signup-form__input"
                   />
                   <input
                     type="lastname"
@@ -121,7 +137,7 @@ export class SignUp extends Component {
                     placeholder="Last Name"
                     onChange={this.onChange}
                     required
-                    className="signup-form__all-inputs__input"
+                    className="signup-form__input"
                   />
                   <input
                     type="username"
@@ -131,10 +147,10 @@ export class SignUp extends Component {
                     placeholder="Username"
                     onChange={this.onChange}
                     required
-                    className="signup-form__all-inputs__input"
+                    className="signup-form__input"
                   />
                 </div>
-                <div className="signup-form__left-inputs">
+                <div className="signup-form__left-side-input-fields">
                   <input
                     type="email"
                     name="email"
@@ -143,7 +159,7 @@ export class SignUp extends Component {
                     placeholder="Email"
                     onChange={this.onChange}
                     required
-                    className="signup-form__all-inputs__input"
+                    className="signup-form__input"
                   />
                   <input
                     type="password"
@@ -153,12 +169,22 @@ export class SignUp extends Component {
                     placeholder="Password"
                     onChange={this.onChange}
                     required
-                    className="signup-form__all-inputs__input"
+                    className="signup-form__input"
+                  />
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    id="auth-confirmPassword"
+                    value={confirmPassword}
+                    placeholder="Confirm Password"
+                    onChange={this.onChange}
+                    required
+                    className="signup-form__input"
                   />
                 </div>
               </div>
               <button type="submit" className="signup-form__button">
-                <div className="signup-form__button--content">
+                <div className="signup-form__button-content">
                   {loading ? (
                     <ScaleLoader
                       loading={loading}

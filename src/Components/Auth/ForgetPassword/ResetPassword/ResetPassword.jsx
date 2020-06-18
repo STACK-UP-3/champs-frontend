@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../../Assets/logo.svg";
 import "./ResetPassword.scss";
 
-import ResetSideBar from "../../../Shared/ResetSideBar/ResetSideBar.jsx";
+import Sidebar from "../../../Shared/AuthSidebar/AuthSidebar.jsx";
 import { resetLink } from "../../../../Redux/Actions/PasswordReset/sendLinkAction";
 import { succcessToast } from "../../../../Utils/toasts";
 
@@ -75,7 +75,7 @@ export class ResetPassword extends Component {
 
     return (
       <div className="container">
-        <ResetSideBar />
+        <Sidebar active="signIn" />
         <section className="forget-password">
           <div className="change-password">
             <img
@@ -93,16 +93,13 @@ export class ResetPassword extends Component {
                 placeholder="Enter your email"
                 onChange={this.onChange}
                 required
-                className="change-password__form--input"
+                className="change-password__input"
               />
-              <Link
-                to="/signin"
-                className="change-password__form--backto-signin"
-              >
+              <Link to="/signin" className="change-password__link">
                 go back to sign in
               </Link>
-              <button type="submit" className="change-password__form--button">
-                <div className="change-password__form--button-content">
+              <button type="submit" className="change-password__button">
+                <div className="change-password__button-content">
                   {loading ? (
                     <ScaleLoader
                       loading={loading}

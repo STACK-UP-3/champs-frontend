@@ -124,7 +124,7 @@ export class SignIn extends Component {
                 Forgot password ?
               </Link>
               <button type="submit" className="signin-form__button">
-                <div className="signin-form__button--content">
+                <div className="signin-form__button-content">
                   {loading ? (
                     <ScaleLoader
                       loading={loading}
