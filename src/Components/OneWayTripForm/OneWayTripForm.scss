@@ -1,0 +1,75 @@
+$input-text-color: hsla(0, 0%, 0%, 0.5);
+$placeholder-color: hsla(0, 0%, 0%, 0.3);
+$input-bottom-border-color: hsla(0, 0%, 0%, 0.3);
+$box-shadow-color: hsla(0, 0%, 0%, 0.102);
+$button-text-color: #f7f7f7;
+$button-background-color: #2e95c9;
+$font-family: "Roboto", sans-serif;
+
+.create-trip-form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  .input-wrapper {
+    width: 90%;
+
+    &--select {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__inputs {
+      background-color: transparent;
+      border: 0;
+      border-bottom: $input-bottom-border-color solid 3px;
+      color: $placeholder-color;
+      font: 600 24px / 33px $font-family;
+      height: 45px;
+      margin-top: 10px;
+      padding: 5px;
+      width: 250px;
+
+      &--textarea-title {
+        border: 0;
+        display: block;
+        height: unset;
+        padding-bottom: 0;
+        width: 100%;
+      }
+
+      &--text-area {
+        margin-top: 0;
+        padding-top: 0;
+        width: 100%;
+      }
+
+      &:focus {
+        color: $input-text-color;
+        outline: none;
+      }
+    }
+
+    &__submit-button {
+      background-color: $button-background-color;
+      border: 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 15px $box-shadow-color;
+      display: block;
+      height: 50px;
+      margin: 0 auto;
+      outline: none;
+      width: 189px;
+
+      &--content {
+        color: $button-text-color;
+        display: flex;
+        flex-direction: row;
+        font: 700 28px / 33px $font-family;
+        justify-content: center;
+      }
+    }
+  }
+}

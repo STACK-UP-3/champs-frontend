@@ -6,8 +6,7 @@ import {
   RESET_LINK_FAIL
 } from "../../ActionTypes/PasswordReset/sendResetLinkActionTypes";
 import { errorToast, removeToast } from "../../../Utils/toasts";
-
-const basePath = "https://champs-bn-api.herokuapp.com/api/v1";
+import basePath from "../../../Utils/basePath";
 
 export const resetLinkRequest = () => {
   removeToast();

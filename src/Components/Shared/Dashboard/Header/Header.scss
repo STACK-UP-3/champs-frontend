@@ -1,0 +1,76 @@
+.logo {
+    position: absolute;
+    left: 0;
+    color: #fff;
+    padding-top: 8px;
+  }
+  
+  .avatar {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    right: 0;
+    border-radius: 50px;
+    margin-right: 14px;
+    border: "1px solid #DFE0EB";
+  }
+  
+  .name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    margin-left: 210%;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .cursor-pointer {
+    margin-left: 220%;
+    margin-right: 12px;
+  }
+  
+  .separator {
+    border-left: "1px solid #DFE0EB";
+    margin-left: 32px;
+    margin-right: 32px;
+    height: px;
+    width: 2px;
+  }
+  .title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    color: rgba(0, 1, 0, 0.5);
+    margin: auto auto auto 14px;
+    margin-top: 3%;
+    margin-left: -25%;
+  }
+  .icon-styles {
+    cursor: "pointer";
+  }
+  
+  @media (max-width: 768px) {
+    .name {
+      display: "none";
+    }
+    .title {
+      margin-left: 36px;
+    }
+    .icon-styles {
+      margin-left: 12px;
+    }
+    .cursor-pointer {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .title {
+      font-size: 20px;
+    }
+  }
+  

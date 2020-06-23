@@ -1,0 +1,26 @@
+$place-badge-background-color: #41dfbe;
+$destination-place-badge-background-color: #41dfbe;
+$place-identifier-color: #ffffff;
+$font-family: "Roboto", sans-serif;
+
+.place-badge {
+  background-color: $place-badge-background-color;
+  box-sizing: border-box;
+  display: inline-block;
+  font: normal 14px / 19px $font-family;
+  text-align: center;
+
+  &--oval {
+    border-radius: 30px;
+  }
+
+  &__identifier {
+    color: $place-identifier-color;
+    display: inline-block;
+    font-family: $font-family;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+  }
+}

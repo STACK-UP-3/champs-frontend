@@ -1,0 +1,280 @@
+$blue-text-color: #2a96cc;
+$oauth-text-color: hsla(120, 100%, 0%, 0.302);
+$box-shadow-color: hsla(0, 0%, 0%, 0.5);
+$button-background-color: #2e95c9;
+$button-text-color: #f7f7f7;
+$input-text-color: hsla(0, 0%, 0%, 0.561);
+$input-bottom-border-color: hsla(0, 0%, 0%, 0.329);
+$font-family: "Roboto",
+sans-serif;
+$error-message-text-color: #a33e10;
+
+.approval-table {
+  font-family: $font-family;
+  left: 223px;
+  position: absolute;
+  top: 85px;
+  width: 79%;
+
+  &__site-title {
+	text-align: center;
+
+	hr {
+	border-color: $blue-text-color;
+	width: 14%;
+	}
+  }
+}
+
+.page-filter {
+  background-color: #fefefe;
+  border-radius: 50px;
+  box-shadow: $box-shadow-color;
+  height: 48px;
+
+  &__filter-text {
+	background-color: $button-background-color;
+	border-radius: 20px;
+	color: $button-text-color;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 23px;
+	margin-left: -16%;
+	padding: 10px 55px;
+  }
+
+  &__filter-by-status {
+	margin-left: 15%;
+	
+	select {
+	  background-color: transparent;
+	  border: none;
+	  margin-left: 5%;
+	  margin-top: 2%;
+	}
+  }
+}
+
+.approval-item {
+  margin-top: 3%;
+
+  &__item-space {
+    background: #FFFBFB;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+	height: 106px;
+	margin-bottom: 30px;
+    padding: 20px 30px;
+  }
+
+  &__reason {
+	display: block;
+	margin-left: 130px;
+	margin-top: -13%;
+  }
+
+  &__destination {
+	margin: 20px 0px;
+  }
+
+  &__from {
+	background: #41DFBE;
+	padding: 10px 10px;
+	font-size: 14px;
+  }
+
+  &__to {
+	background: #41DFBE;
+	font-size: 14px;
+	margin-left: 3%;
+	padding: 10px 15px;
+  }
+
+  &__label {
+	color: white;
+  }
+
+  &__date {
+	color: rgba(0, 1, 0, 0.5);
+	font-size: 15px;
+	font-weight: bold;
+  }
+
+  &__button {
+	display: block;
+	margin-left: 460px;
+	margin-top: -85px;
+
+ 	&--btn-primary {
+	  background-color: $blue-text-color;
+	  border: none;
+	  border-radius: 20px;
+	  color: white;
+	  display: block;
+	  margin-bottom: 10px;
+	  padding: 8px 50px;
+	}
+
+	&--btn-danger {
+	  background-color: #FC4F29;
+	  border: none;
+	  border-radius: 20px;
+	  color: white;
+	  padding: 8px 50px;
+    }
+  }
+}
+
+.item-details {
+  border-left: 1px solid darkgrey;
+  display: flex;
+  height: 100%;
+  margin-left: 625px;
+  margin-top: -10%;
+
+  &__profile-picture {
+	margin-left: 5%;
+	margin-top: -16%;
+  }
+
+  &__text {
+	margin-left: 3%;;
+	margin-top: -6%;
+  }
+
+  &__requester {
+	color: darkgray;
+  }
+
+  &__email {
+	color: $blue-text-color;
+  }  
+}
+
+
+@media only screen and (max-width: 1000px) {
+	.approval-table {
+		left: 0px;
+		width: 91%;
+		margin: 0px 20px;
+	}
+	
+	.page-filter {
+		&__filter-by-status {
+			margin-top: 25px;
+			padding-top: 10px;
+		}
+	}
+
+	.approval-item {
+		&__item-space {
+			height: auto;
+		}
+
+		&__reason {
+			margin-top: -34%;
+			margin-left: 34%;
+		}
+
+		&__from {
+			padding: 1%;
+		}
+
+		&__to {
+			padding: 1%;
+		}
+
+		&__item-space {
+			padding: 10px 5px;
+		}
+
+		&__title {
+			margin-block-end: -0.8em;
+		}
+
+		&__button {
+			margin-left: 0px;
+			margin-top: 15px;
+			display: inline-flex;
+
+			&--btn-primary {
+				margin-bottom: 0px;
+			}
+
+			&--btn-danger {
+				margin-left: 30px;
+			}
+		}
+
+		&__arrow-up {
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 14px solid #979797;
+			margin-left: 25px;
+			height: 10px;
+		}
+
+		&__arrow-down {
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 14px solid #979797;
+			margin-left: 25px;
+			height: 10px;
+		}
+	}
+
+	.place-badge {
+		font-size: 12px;
+    	line-height: 16px;
+	}
+	
+	.item-details {
+		margin-left: 0px;
+		margin-top: 50px;
+		border-left: none;
+
+		&__username {
+			margin-block-start: 0em;
+    		margin-block-end: 0em;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 370px) {
+	.approval-table {
+		width: 90%;
+	}
+
+	.approval-item {
+		&__reason {
+			margin-top: -45%;
+			margin-left: 37%;
+		}
+
+		&__to {
+			margin-left: 0px;
+			line-height: 35px;
+		}
+
+		&__destination {
+			margin-bottom: 20px;
+		}
+
+		&__button {
+			&--btn-primary {
+				padding: 8px 30px;
+			}
+
+			&--btn-danger {
+				padding: 8px 30px;
+				margin-left: 15px;
+			}
+		}
+	}
+
+	.item-details {
+		&__email {
+			font-size: 14px;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+$font-family: "Roboto", sans-serif;
+$title-color: hsla(120, 100%, 0%, 0.8);
+
+.latest-trips-container {
+  width: 93%;
+  &__title {
+    color: $title-color;
+    font: 900 22px / 25px $font-family;
+  }
+
+  .loader {
+    margin: 20px auto;
+    width: 100px;
+  }
+
+  .pagination {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 50%;
+
+    .pagination-number {
+      display: inline;
+      margin-right: 15px;
+
+      &__link{
+        color: #000000;
+        font: 600 14px / 19px $font-family;
+        text-decoration: none;
+
+        &--active {
+          color: #CC2A95;
+        }
+      }
+    }
+  }
+}

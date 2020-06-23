@@ -13,6 +13,8 @@ import Protected from "./Shared/ProtectedRoute/ProtectedRoute.jsx";
 import EmailVerificationResponse from "./Shared/EmailVerificationResponse/EmailVerificationResponse.jsx";
 import ResetPasswordComponent from "./Auth/ForgetPassword/ResetPassword/ResetPassword.jsx";
 import ChangePassword from "./Auth/ForgetPassword/ChangePassword/ChangePassword.jsx";
+import ApprovalTableComponent from "./ApprovalTable/approvalTable.jsx";
+import ViewTripsComponent from "./ViewTrips/ViewTrips.jsx";
 
 toast.configure();
 
@@ -36,6 +38,8 @@ const App = () => (
             component={ResetPasswordComponent}
           />
           <Route exact path="/reset-password" component={ChangePassword} />
+          <Route exact path="/approval" component={ApprovalTableComponent} />
+          <Route exact path="/view-trips" component={ViewTripsComponent} />
         </Switch>
       </Router>
     </div>

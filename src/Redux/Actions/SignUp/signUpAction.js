@@ -5,8 +5,7 @@ import {
   SIGNUP_FAIL
 } from "../../ActionTypes/SignUp/signUpActionTypes.js";
 import { errorToast, removeToast } from "../../../Utils/toasts";
-
-const basePath = "https://champs-bn-api.herokuapp.com/api/v1";
+import basePath from "../../../Utils/basePath";
 
 export const signUpRequest = () => {
   removeToast();
